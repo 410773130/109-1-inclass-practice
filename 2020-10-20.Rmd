@@ -1,0 +1,41 @@
+---
+title: "課堂練習模版"
+author: "李少謹"
+date: "2020-10-20"
+output: html_document
+params:
+  id: "410773130"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+b=5
+
+```
+
+# title 
+
+[NTPU](http://www.ntpu.edu.tw)
+
+```{r}
+
+```
+
+```{r}
+
+```
+
+```{python}
+
+```
+
+```{r}
+
+```
+
+
