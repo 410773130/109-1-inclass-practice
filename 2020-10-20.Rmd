@@ -35,7 +35,26 @@ b=5
 ```
 
 ```{r}
+install.packages(c("googlesheets4"))
+```
+```{r}
 
 ```
+## Your code
+用指示安裝套件
+```{r}
+install.packages(c("googlesheets4"))
+library(googlesheets4)
+library(V8)
+```
+```{r}
+library(knitr)
+purl("2020-10-20.Rmd")
+```
+
+```{r}
+
+```
+
 
 
