@@ -1,0 +1,163 @@
+---
+title: "課堂練習模版"
+author: "李少謹"
+date: "2020-10-21"
+output: output_format
+params:
+  id: "410773130"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+"\u0928\u092e\u0938\u094d\u0924\u0947 \u0926\u0941\u0928\u093f\u092f\u093e"
+```
+```{r}
+num <- c(1.5, 2, 3)
+int <- c(1L, 3L, -2L)
+char <- c("1.5","2","3")
+logi <- c(T,T,F)
+
+typeof(num)
+typeof(int)
+typeof(char)
+typeof(logi)
+```
+
+```{r}
+class(num)
+class(int)
+class(char)
+class(logi)
+```
+
+```{r}
+"1"+"1.5"
+1+1.5
+```
+# Factor
+
+```{r}
+# 10位學生的主系
+majors10_char <- c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系')
+
+typeof(majors10_char)
+class(majors10_char)
+```
+## factor
+```{r}
+# 10位學生的主系
+majors10_factor <- factor(c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系'))
+
+#OR
+majors10_factor <- factor(majors10_char)
+
+typeof(majors10_factor)
+class(majors10_factor)
+```
+```{r}
+library(lubridate)
+```
+
+
+
+
+```{r}
+tpeTime <- ymd_hms("2020-03-18 13:52:40",
+        tz="Asia/Taipei")
+```
+
+```{r}
+pgTime <- mdy_hms("Mar.18, 2020, 05:52:40",
+                  tz="Europe/Lisbon")
+```
+
+```{r}
+tpeTimeVector <- 
+  ymd_hms(
+    c("2020-03-18 13:52:40",
+      "2020-03-11 03:12:40"),
+    tz="Asia/Taipei"
+    )
+```
+
+```{r}
+typeof(tpeTime)
+class(tpeTime)
+```
+
+```{r}
+tpeTime
+print(tpeTime)
+cat(tpeTime)
+```
+```{r}
+as.numeric(tpeTime)
+```
+
+```{r}
+# print(as.character(tpeTime))
+cat(as.character(tpeTime))
+```
+ # let computer tell us time
+ 
+ human tells computer
+```{r}
+tpeTime2 <- ymd_hms("2010-03-18 16:52:40",
+        tz="Asia/Taipei")
+pgTime2 <- mdy_hms("Mar.01, 2020, 03:52:40",
+                  tz="Europe/Lisbon")
+```
+
+computer tells human
+```{r}
+tpeTime3 <- 
+  with_tz(tpeTime2, tzone="America/New_York")
+
+print(tpeTime2)
+print(tpeTime3)
+```
+
+```{r}
+cat(tpeTime2) 
+cat(tpeTime3)
+```
+ 
+```{r}
+pgTime3 <- 
+  with_tz(pgTime2, tzone="America/New_York")
+
+print(pgTime2)
+print(pgTime3)
+```
+
+```{r}
+tpeTime3
+pgTime3
+```
+
+```{r}
+tpeTime
+class(tpeTime)
+as.character(tpeTime)
+
+```
+```{r}
+tpeTime_utc <- with_tz(tpeTime, tzone="UTC")
+as.character(tpeTime_utc)
+```
+
+```{r}
+# Method 2: pass as a character that fits ISO8601 date time description standard with tz onset specified
+tpeTime_iso8601 <- format_ISO8601(tpeTime, usetz=T)
+tpeTime_iso8601
+```
+
+```{r}
+tpeTime <- ymd_hms(tpeTime_iso8601)
+```
+
