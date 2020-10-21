@@ -161,3 +161,112 @@ tpeTime_iso8601
 tpeTime <- ymd_hms(tpeTime_iso8601)
 ```
 
+```{r}
+library(lubridate)
+
+# Date/Time class
+purchasingTime <- 
+  ymd_hms("2020-03-31T13:40:55Z")
+
+# character
+location <- "一芳"
+item <- "水果茶"
+
+# numeric
+quantity <- 2
+
+mingsPurchase <-
+  list(
+    purchasingTime, 
+    location, 
+    quantity, 
+    item
+  )
+print(mingsPurchase)
+```
+
+```{r}
+a <- c(2,5,10, 16)
+print(a)
+```
+
+```{r}
+objectName <- 
+`objectName`<-
+  
+```
+
+```{r}
+mingsPurchase2 <-
+  list(
+    time = purchasingTime,
+    'location' = location,
+    "quantity" = quantity,
+    `item name` = item
+  )
+print(mingsPurchase2)
+```
+
+```{r}
+heights = c(
+  mary=162,
+  john=177,
+  steve=180
+)
+```
+
+```{r}
+exampleList <-
+list(
+      c(4,6,10),
+      list("Mary",173),
+      TRUE
+  )
+print(exampleList)
+```
+
+```{r}
+list(
+  list(2,"john"),
+  list(3,"mary")
+)
+print(exampleList)
+```
+
+```{r}
+example2c <- c(
+  c(2,5),
+  c(4,6)
+)
+print(example2c)
+
+```
+
+```{r}
+# 「**2杯**」「**水果茶**」
+item1 <- list(
+  quantity=2,
+  `item name`="水果茶"
+)
+# 「**1杯**」「**日月紅茶**」
+item2 <- list(
+  quantity=1,
+  `item name`="日月紅茶"
+)
+
+mingsPurchase3 <-
+  list(
+    time = purchasingTime,
+    location = location,
+    items=list(
+      item1,
+      item2
+    )
+  )
+
+print(mingsPurchase3)
+```
+
+
+
+
