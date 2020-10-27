@@ -1,0 +1,452 @@
+---
+title: "Untitled"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars}
+summary(cars)
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.
+```{r}
+x <- (5>4)
+class(x)
+```
+
+```{r}
+my_108_total_credits <- 15
+_108_total_credits <- 15
+108_total_credits <- 15
+_my_108_total_credits <- 15
+my.108.total_credits <- 15
+.108.total_credits <- 15 # 隱藏變數
+.my.108.total_credits <- 15
+我的108學年總學分數 <- 15
+`我的108學年總學分數` <- 15 # 特殊名稱處理，`不是名稱的一部份
+`.108.total_credits` <- 15
+```
+```{r}
+我的年紀 <- 20
+my_age <- 我的年紀
+```
+```{r}
+myName <- "Mary"
+length(myName)
+```
+```{r}
+num1 <- 5
+vNum1 <- c(2,5)
+vNum2 <- c(2, num1)
+```
+
+```{r}
+vNum1 <- c(-1,5)
+vNum2 <- c(2,3)
+vNum3 <- c(vNum1,vNum2)
+vNum4 <- c(-1,5,2,3)
+vNum5 <- c(c(-1,5),c(2,3))
+```
+
+```{r}
+vNum1 <- c(-1,5)
+vNum2 <- c(2,3)
+vNum4 <- c() # 空向量
+```
+
+```{r}
+vNum3 <- c(vNum2, vNum1)
+vNum4 <- c(vNum4, vNum1) # 向量疊代 （recursive vector concatenate）
+```
+```{r}
+num1<-5 # 非整數
+num2<-5L # 整數
+
+num1Vector<-c(5,6,7)
+num2Vector<-c(5L,6L,7L)
+```
+```{r}
+object.size(num1)
+object.size(num2)
+object.size(num1Vector)
+object.size(num2Vector)
+```
+
+```{r}
+char1Vector<-c("你好","How are you?")
+```
+```{r}
+class(char1Vector)
+```
+
+```{r}
+dialogue <- c('小明說："明天不用上課。"',
+               '小花說："真的嗎？"')
+
+dialogue # 顯示原始值的內容（含輸入時的引號）
+cat(dialogue, sep="\n") # 顯示給人類看（含存出來）的值，sep="\n", 不同元素換行陳列。
+writeLines(dialogue, "conversation.txt") # cat顯示的正是存出來樣貌。
+```
+```{r}
+qq <- c("安安", "你好", "在嗎")
+qq
+cat(qq, sep = "\n")
+```
+```{r}
+cat("老師說換行要寫\\n, \\是escape的意思")
+cat("老師說換行要寫\'\\n\', \"\\\"是escape的意思")
+```
+
+```{r}
+cat(dialogue, sep="\n")
+cat(
+  dialogue, sep="\n"
+)
+cat(
+  dialogue,
+  sep="\n"
+)
+```
+
+```{r}
+logi1 <- c(T,TRUE,F,FALSE,FALSE)
+```
+
+```{r}
+sum(logi1)
+```
+
+```{r}
+num <- c(1.5, 2, 3)
+int <- c(1L, 3L, -2L)
+char <- c("1.5","2","3")
+logi <- c(T,T,F)
+
+typeof(num)
+typeof(int)
+typeof(char)
+typeof(logi)
+```
+
+```{r}
+class(num)
+class(int)
+class(char)
+class(logi)
+```
+
+```{r}
+factor(
+  字串向量
+)
+```
+
+```{r}
+# 10位學生的主系
+majors10_char <- c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系')
+
+typeof(majors10_char)
+class(majors10_char)
+```
+
+```{r}
+majors10_factor <- factor(majors10_char)
+# 或
+majors10_factor <- factor(
+  c('經濟學系','社會學系','社會學系','經濟學系','經濟學系','社會學系','經濟學系','經濟學系','經濟學系','社會學系')
+)
+
+typeof(majors10_factor)
+class(majors10_factor)
+```
+
+```{r}
+majors10_char
+majors10_factor
+```
+
+```{r}
+as.integer(majors10_factor) 
+levels(majors10_factor)
+```
+
+```{r}
+stringInteger <- c("1","2","-11")
+class(stringInteger) # 無法進行數值運算
+stringInteger+2
+```
+
+```{r}
+trueInteger <- as.integer(stringInteger)
+class(trueInteger) # 可以進行數值運算
+typeof(trueInteger)
+trueInteger+2
+```
+
+```{r}
+char3 <- c("小明","1","3")
+as.integer(char3)
+```
+```{r}
+as.integer(stringInteger)
+class(stringInteger)
+```
+
+```{r}
+stringInteger <- as.integer(stringInteger)
+class(stringInteger)
+```
+
+```{r}
+studentId <- c(410773002, 410773015)
+class(studentId)
+studentId <- as.integer(studentId)
+class(studentId)
+```
+
+```{r}
+library(lubridate)
+```
+
+```{r}
+tpeTime <- ymd_hms("2020-03-18 13:52:40",
+        tz="Asia/Taipei")
+```
+
+```{r}
+pgTime <- mdy_hms("Mar.18, 2020, 05:52:40",
+                  tz="Europe/Lisbon")
+```
+
+```{r}
+tpeTimeVector <- 
+  ymd_hms(
+    c("2020-03-18 13:52:40",
+      "2020-03-11 03:12:40"),
+    tz="Asia/Taipei"
+    )
+```
+```{r}
+typeof(tpeTime)
+class(tpeTime)
+```
+
+```{r}
+tpeTime
+print(tpeTime)
+cat(tpeTime)
+```
+```{r}
+cat(as.character(tpeTime))
+class(as.character(tpeTime))
+```
+
+```{r}
+tpeTime2 <- ymd_hms("2010-03-18 16:52:40",
+        tz="Asia/Taipei")
+pgTime2 <- mdy_hms("Mar.01, 2020, 03:52:40",
+                  tz="Europe/Lisbon")
+```
+```{r}
+tpeTime3 <- 
+  with_tz(tpeTime2, tzone="America/New_York")
+
+print(tpeTime2)
+print(tpeTime3)
+```
+```{r}
+pgTime3 <- 
+  with_tz(pgTime2, tzone="America/New_York")
+
+print(pgTime2)
+print(pgTime3)
+```
+
+```{r}
+as.numeric(tpeTime2)
+as.numeric(tpeTime3)
+```
+```{r}
+pgTime2 - tpeTime2
+pgTime3 - tpeTime3
+
+```
+
+```{r}
+# Pass data as it is (Not good), not a character
+tpeTime
+
+# Method 1: convert to UTC and pass as character
+tpeTime_utc <- with_tz(tpeTime, tzone="UTC")
+as.character(tpeTime_utc)
+```
+
+```{r}
+# Method 2: pass as a character that fits ISO8601 date time description standard with tz onset specified
+tpeTime_iso8601 <- format_ISO8601(tpeTime, usetz=T)
+tpeTime_iso8601
+```
+
+```{r}
+tpeTime <- ymd_hms(tpeTime_iso8601)
+```
+
+```{r}
+library(lubridate)
+
+# Date/Time class
+purchasingTime <- 
+  ymd_hms("2020-03-31T13:40:55Z")
+
+# character
+location <- "一芳"
+item <- "水果茶"
+
+# numeric
+quantity <- 2
+
+mingsPurchase <-
+  list(
+    purchasingTime, 
+    location, 
+    quantity, 
+    item
+  )
+print(mingsPurchase)
+```
+```{r}
+a <- c(2,5,10,16)
+print(a)
+```
+
+```{r}
+student1 <-
+  list(
+    name = character(),
+    id = character(),
+    gmail = character(),
+    googleClassroom =
+      list(
+        displayName = character()
+      ),
+    github =
+      list(
+        username = character(),
+        repoUrl = character()
+      ),
+    homeworks = list(),
+    exams = list(),
+    list()
+  )
+
+names(student1) # 每個元素名稱
+length(student1) # 元素個數
+```
+
+```{r}
+str(student1, 2) # 第一層基本元素架構
+```
+
+```{r}
+hw1 <- list(
+  date=ymd("2020-10-21"),
+  grade=10
+)
+exam1 <- list(
+  date=ymd("2020-10-28"),
+  grade=50
+)
+student1 <-
+  list(
+    name = "Martin",
+    id = "007",
+    gmail = "mt@gm.ntpu.edu.tw",
+    googleClassroom =
+      list(
+        displayName = "MT L"
+      ),
+    github =
+      list(
+        username = "tpemartin",
+        repoUrl = "https://github.com/tpemartin/109-1-inclass-practice"
+      ),
+    homeworks = list(
+      hw1
+    ),
+    exams = list(
+      exam1
+    ),
+    list()
+  )
+
+str(student1, 2)
+```
+
+
+```{r}
+categoryTemplate = 
+  list(
+    categoryName=character(),
+    items = list(
+    )
+  )
+```
+
+```{r}
+saladCat <-
+  list(
+    categoryName="莎拉套餐",
+    items = list(
+    list("板煎雞腿排經典凱薩沙拉"
+  ,203),
+  list("煙燻鮭魚佐酒醋沙拉",
+  203
+  )
+    )
+  )
+print(saladCat)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
