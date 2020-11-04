@@ -1,0 +1,33 @@
+---
+title: "課堂練習模版"
+author: "李少謹"
+date: "2020-11-04"
+output: output_format
+params:
+  id: "410773130"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+gender = character();
+gender = logical();
+school = character();
+factor()
+title = character;
+
+```
+
+```{r}
+gender = "女"
+school = "國立臺北大學"
+title = "問 好笑嗎"
+content = "這個話好笑嗎？"
+tags = 
+timestamp()
+```
+
