@@ -257,9 +257,63 @@ ages_fct3_newLevels
 is.ordered(ages_fct3_newLevels)
 ages_fct3_newLevels
 ```
+```{r}
+try <- factor(c(1,2,3,2,1),levels = c(1,2,3),ordered = T)
+class(try)
+as.data.frame(try)
+```
+```{r}
+library(stringr)
+fruit <- c("apple", "banana", "pear", "pinapple")
+str_detect(fruit, "a")
+str_detect(fruit, "^a")
+str_detect(fruit, "a$")
+str_detect(fruit, "b")
+str_detect(fruit, "[aeiou]")
 
+# Also vectorised over pattern
+str_detect("aecfg", letters)
 
+# Returns TRUE if the pattern do NOT match
+str_detect(fruit, "^p", negate = TRUE)
+```
 
+```{r}
+logi1 <- c(T,TRUE,F,FALSE,FALSE)
+sum(logi1)
+```
+
+```{r}
+sequenceNums <- c(11, 6, 8, 11, 12, 11, 3, 7, 10, 8)
+
+pick_evens <- (sequenceNums %% 2) == 0
+pick_evens
+sequenceNums[pick_evens]
+```
+
+```{r}
+student1 <-
+  list(
+    name = character(),
+    id = character(),
+    gmail = character(),
+    googleClassroom =
+      list(
+        displayName = character()
+      ),
+    github =
+      list(
+        username = character(),
+        repoUrl = character()
+      ),
+    homeworks = list(),
+    exams = list(),
+    list()
+  )
+
+names(student1) # 每個元素名稱
+length(student1) # 元素個數
+```
 
 
 
