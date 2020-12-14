@@ -1,0 +1,149 @@
+---
+title: "課堂練習模版"
+author: "李少謹"
+date: "2020-12-14"
+output: output_format
+params:
+  id: "410773130"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Your code
+
+```{r}
+originX <- 0:10
+originX
+
+# 將0-10切兩份
+cutX_evenly <- cut(originX, breaks=2)
+cutX_evenly
+```
+
+```{r}
+# 由breaks將0（含）到10間（含）分成3份
+cutX_error <- cut(originX, breaks=c(0,3,7,10))
+cutX_error
+```
+
+
+
+```{r}
+# 由breaks將0（含）到10間（含）分成3份
+cutX_error <- cut(originX, breaks=c(-1,3,7,10))
+cutX_error
+```
+
+```{r}
+# 另一種用法
+cutX_infinity <- cut(originX, breaks=c(-Inf,3,7,Inf))
+cutX_infinity
+```
+
+
+```{r}
+library(lubridate)
+originD <- ymd(c(
+  "2020-01-03", 
+  "2020-02-11",
+  "2020-03-08", 
+  "2020-05-07",
+  "2020-09-20",
+  "2020-10-10",
+  "2020-11-07",
+  "2020-12-05"))
+originD
+```
+
+
+```{r}
+# 由breaks將2020-01-03（含）至2020-12-06（不含）分成三份
+cutD <- cut(originD,
+            breaks = 
+              c(
+                min(originD),
+                ymd(c(
+                "2020-03-08",
+                "2020-05-22",
+                "2020-07-20",
+                "2020-10-11")),
+                max(originD)+days(1)
+              ))
+              
+cutD
+levels(cutD)
+```
+
+
+```{r}
+levels(cutD) <- c("沒事","事件一","沒事","事件二","沒事")
+
+df <- data.frame(
+  origin=originD,
+  cut=cutD
+)
+View(df)
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
+
+```{r}
+```
+
