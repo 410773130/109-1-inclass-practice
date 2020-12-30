@@ -2,8 +2,8 @@
 title: "homework 6"
 output: html_document
 params:
-  studentName: "你的名字"
-  studentID: "你的學號"
+  studentName: "李少謹"
+  studentID: "410773130"
 ---
 
 # 注意事項
@@ -35,6 +35,8 @@ library(jsonlite); library(lubridate); library(readr); library(stringr); library
 ```{r, echo=T, eval=FALSE}
 members <- jsonlite::fromJSON("https://www.dropbox.com/s/olji1q29t2autec/ntpumeetMembers.json?dl=1", simplifyDataFrame = F)
 memberIds <- purrr::map_chr(members, ~{.x[["memberID"]]})
+View(memberIds)
+View(members )
 ```
 
 
@@ -46,6 +48,25 @@ memberIds <- purrr::map_chr(members, ~{.x[["memberID"]]})
 Complete the **appLogin** function design:
 
 ```{r ans31, echo=F}
+appLogin <- function(memberID, currentGPS){
+    members_num <-str_which(memberIds,pattern = memberID)
+    members$latestGPS <- currentGPS
+  str(members[[members_num]])
+}
+
+
+
+memberID <- memberIds[[582]]
+currentGPS <-
+  c(
+    sample(
+      seq(24.94062,24.94788, by=0.00001),1),
+    sample(
+      seq(121.36293,121.37222, by=0.00001),1)
+    )
+
+currentUser <- appLogin(memberID, currentGPS)
+
 # appLogin
 ```
 
@@ -62,6 +83,11 @@ otherMembers <- sample(memberIds[which(memberIds != memberID)],100)
 
 
 ```{r ans32, echo=F, eval=F}
+refine_byLikesBlocks <- function(otherMembers){
+
+}
+
+
 # refine_byLikesBlocks
 ```
 
@@ -85,6 +111,22 @@ jsonlite::fromJSON("https://www.dropbox.com/s/ttw2j7nitc35vfx/palaceMuseumPainti
 #### 4.1 Full list of the painters{-}
 
 ```{r ans41, echo=F}
+
+
+map(
+  1:200,
+  ~{
+    creator_name <- painting[[.x]][[1]][[2]]$Creator
+    
+    creator_name_1 <- str_extract(creator_name,"(?<=[：])[\u4E00-\u9FFF]+")
+    str_replace_all(creator_name_1,pattern = " " ,replacement = "無名氏")
+  
+  }
+) ->result
+result
+allCreators <- unlist(result)
+
+
 # allCreators
 ```
 
